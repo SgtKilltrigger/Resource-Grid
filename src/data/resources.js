@@ -1146,7 +1146,7 @@ export function getCooldown(name, savefile) {
   const Resource = Resources[name];
   const order = Resource.order;
 
-  let craftTime = Resource.craftTime*1000;
+  let craftTime = Resource.craftTime*200; //changed from 1000 to 200
   if (AutoConnected[order] !== -1) {
     craftTime /= Math.max(1, savefile.resources[AutoConnected[order]].have);
     if (savefile.resources[AutoConnected[order]].have >= 1) craftTime /= ResourceArr[AutoConnected[order]].effectMultiply(savefile.resources);
